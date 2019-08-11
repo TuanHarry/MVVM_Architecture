@@ -1,7 +1,9 @@
-package com.example.tuantran.mvvm_architecture;
+package com.example.tuantran.mvvm_architecture.View.UI;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.tuantran.mvvm_architecture.R;
 
 public class MainActivity extends AppCompatActivity {
 
