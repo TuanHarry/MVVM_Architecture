@@ -1,18 +1,18 @@
-package com.example.tuantran.mvvm_architecture.ViewModel;
+package com.example.tuantran.mvvm_architecture.viewmodel;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.support.annotation.NonNull;
 
-import com.example.tuantran.mvvm_architecture.Service.Model.Project;
-import com.example.tuantran.mvvm_architecture.Service.Repository.ProjectRepository;
+import com.example.tuantran.mvvm_architecture.service.model.Project;
+import com.example.tuantran.mvvm_architecture.service.repository.ProjectRepository;
 
 import java.util.List;
 
 public class ProjectListViewModel extends AndroidViewModel {
 
-    LiveData<List<Project>> projectListObservable;
+    private final LiveData<List<Project>> projectListObservable;
 
     public ProjectListViewModel(@NonNull Application application) {
         super(application);

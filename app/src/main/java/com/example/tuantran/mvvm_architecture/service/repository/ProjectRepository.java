@@ -1,10 +1,10 @@
-package com.example.tuantran.mvvm_architecture.Service.Repository;
+package com.example.tuantran.mvvm_architecture.service.repository;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.util.Log;
 
-import com.example.tuantran.mvvm_architecture.Service.Model.Project;
+import com.example.tuantran.mvvm_architecture.service.model.Project;
 
 import java.util.List;
 
@@ -25,7 +25,7 @@ public class ProjectRepository {
     // Init retrofit
     private ProjectRepository(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(GitHubService.GITHUB_API_URL)
+                .baseUrl(GitHubService.HTTPS_API_GITHUB_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -34,8 +34,10 @@ public class ProjectRepository {
 
 
     public synchronized static ProjectRepository getInstance(){
-        if (projectRepository == null){
-            projectRepository = new ProjectRepository();
+        if (projectRepository == null) {
+            if (projectRepository == null) {
+                projectRepository = new ProjectRepository();
+            }
         }
         return projectRepository;
     }
@@ -60,9 +62,10 @@ public class ProjectRepository {
 
     public LiveData<Project> getProjectDetail(String userID, String projectName){
         final MutableLiveData<Project> data = new MutableLiveData<>();
-        gitHubService.getProjectDetail(userID, projectName).enqueue(new Callback<Project>() {
+        gitHubService.getProjectDetails(userID, projectName).enqueue(new Callback<Project>() {
             @Override
             public void onResponse(Call<Project> call, Response<Project> response) {
+                simulateDelay();
                 data.setValue(response.body());
             }
 

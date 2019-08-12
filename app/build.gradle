@@ -1,6 +1,6 @@
 project.ext {
-    appcompat = "25.3.1"
-    arch = "1.0.0-alpha1"
+    appcompat = "28.0.0"
+    arch = "1.1.1"
     retrofit = "2.0.2"
     constraintLayout = "1.0.2"
 }
@@ -22,6 +22,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    dataBinding {
+        enabled = true
     }
 }
 
