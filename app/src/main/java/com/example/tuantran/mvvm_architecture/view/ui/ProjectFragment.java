@@ -43,6 +43,7 @@ public class ProjectFragment extends Fragment {
         binding.setProjectViewModel(viewModel);
         binding.setIsLoading(true);
 
+
         observeViewModel(viewModel);
     }
 
@@ -58,6 +59,8 @@ public class ProjectFragment extends Fragment {
             }
         });
     }
+
+
 
     /** Creates project fragment for specific project ID */
     public static ProjectFragment forProject(String projectID) {

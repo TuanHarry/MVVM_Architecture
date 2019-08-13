@@ -7,9 +7,14 @@ import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 import android.databinding.ObservableField;
 import android.support.annotation.NonNull;
+import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
 
 import com.example.tuantran.mvvm_architecture.service.model.Project;
 import com.example.tuantran.mvvm_architecture.service.repository.ProjectRepository;
+
+import static com.example.tuantran.mvvm_architecture.view.ui.ProjectListFragment.TAG;
 
 public class ProjectViewModel extends AndroidViewModel {
     private final LiveData<Project> projectObservable;
@@ -31,6 +36,10 @@ public class ProjectViewModel extends AndroidViewModel {
 
     public void setProject(Project project) {
         this.project.set(project);
+    }
+
+    public void clickButtonDownload(){
+        Log.d(TAG, "clickButtonDownload: ");
     }
 
     /**

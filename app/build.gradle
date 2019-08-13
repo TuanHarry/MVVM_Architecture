@@ -3,6 +3,7 @@ project.ext {
     arch = "1.1.1"
     retrofit = "2.0.2"
     constraintLayout = "1.0.2"
+    downloader = "0.6.0"
 }
 
 apply plugin: 'com.android.application'
@@ -52,4 +53,6 @@ dependencies {
     implementation "com.android.support.constraint:constraint-layout:$project.constraintLayout"
     //noinspection GradleCompatible
     implementation "com.android.support:support-v4:$project.appcompat"
+    //PR downloader
+    implementation "com.mindorks.android:prdownloader:$project.downloader"
 }
