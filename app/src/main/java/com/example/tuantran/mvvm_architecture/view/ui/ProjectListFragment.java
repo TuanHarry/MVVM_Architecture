@@ -32,12 +32,12 @@ public class ProjectListFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
+        // Binding to view
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_project_list,container,false);
 
         adapter = new ProjectAdapter(projectClickCallback);
         binding.projectList.setAdapter(adapter);
         binding.setIsLoading(true);
-
 
         return binding.getRoot();
     }

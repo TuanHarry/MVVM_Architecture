@@ -16,7 +16,6 @@ public class ProjectListViewModel extends AndroidViewModel {
 
     public ProjectListViewModel(@NonNull Application application) {
         super(application);
-
         projectListObservable = ProjectRepository.getInstance().getProjectList("TuanHarry");
     }
 

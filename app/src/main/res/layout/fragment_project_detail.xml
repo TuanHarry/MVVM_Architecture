@@ -105,6 +105,16 @@
                 android:textSize="@dimen/project_text"
                 android:text="@{String.format(@string/clone_url, projectViewModel.project.clone_url)}"/>
 
+            <Button
+                android:layout_marginTop="16dp"
+                android:background="@drawable/button_download"
+                android:id="@+id/downloadProject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/download"
+                android:textColor="#EB6BC2F5"
+                android:textSize="@dimen/project_text"/>
+
         </LinearLayout>
 
     </FrameLayout>
