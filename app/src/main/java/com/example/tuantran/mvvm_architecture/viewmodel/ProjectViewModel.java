@@ -38,10 +38,6 @@ public class ProjectViewModel extends AndroidViewModel {
         this.project.set(project);
     }
 
-    public void clickButtonDownload(){
-        Log.d(TAG, "clickButtonDownload: ");
-    }
-
     /**
      * A creator is used to inject the project ID into the ViewModel
      */
